@@ -24,7 +24,9 @@ test:
 
 deployment:
   prod:
-    branch: *
+    branches:
+      only:
+        - /*/
     # branch: master
     commands:
       - docker login --email fredhutch@fhcrc.org --username $DOCKERIMAGES_USER --password $DOCKERIMAGES_PASS https://dockerimages.fhcrc.org
