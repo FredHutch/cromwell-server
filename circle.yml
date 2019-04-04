@@ -9,10 +9,10 @@ dependencies:
     - curl -LO https://releases.rancher.com/cli/v0.6.2/rancher-linux-amd64-v0.6.2.tar.gz
     - tar zxf rancher-linux-amd64-v0.6.2.tar.gz
     - ls -lh
-    - docker build -t dockerimages.fhcrc.org/cromwell:callcachingpr .
     - curl -LO https://github.com/git-lfs/git-lfs/releases/download/v2.7.1/git-lfs-linux-amd64-v2.7.1.tar.gz
     - tar zxf git-lfs-linux-amd64-v2.7.1.tar.gz
     - ./git-lfs pull
+    - docker build -t dockerimages.fhcrc.org/cromwell:callcachingpr .
 
 test:
   override:
@@ -24,6 +24,7 @@ test:
 
 deployment:
   prod:
+    branch: *
     # branch: master
     commands:
       - docker login --email fredhutch@fhcrc.org --username $DOCKERIMAGES_USER --password $DOCKERIMAGES_PASS https://dockerimages.fhcrc.org
