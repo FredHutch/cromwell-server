@@ -14,6 +14,7 @@ dependencies:
 test:
   override:
     - echo come up with a good test
+    - ls -ltr
     # - docker run -d --name cromwell -p 8000:8000 dockerimages.fhcrc.org/cromwell:callcachingpr
     # - sleep 15 && curl --retry 10 --retry-delay 5 -v http://${BUILD_HOST}:8000
     # - docker stop cromwell && docker rm --force cromwell
