@@ -10,6 +10,9 @@ dependencies:
     - tar zxf rancher-linux-amd64-v0.6.2.tar.gz
     - ls -lh
     - docker build -t dockerimages.fhcrc.org/cromwell:callcachingpr .
+    - curl -LO https://github.com/git-lfs/git-lfs/releases/download/v2.7.1/git-lfs-linux-amd64-v2.7.1.tar.gz
+    - tar zdf git-lfs-linux-amd64-v2.7.1.tar.gz
+    ./git-lfs pull
 
 test:
   override:
