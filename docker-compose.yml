@@ -1,0 +1,17 @@
+version: '2'
+services:
+  cromwell:
+    image: dockerimages.fhcrc.org/cromwell:callcachingpr
+
+    labels:
+      io.rancher.container.pull_image: always
+
+    restart: always
+
+    secrets:
+    - aws.callcaching.conf
+
+secrets:
+  aws.callcaching.conf:
+    external: true
+        
