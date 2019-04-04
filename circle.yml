@@ -24,10 +24,10 @@ test:
 
 deployment:
   prod:
-    branches:
-      only:
-        - /*/
-    # branch: master
+    # branches:
+    #   only:
+    #     - /*/
+    branch: callcaching
     commands:
       - docker login --email fredhutch@fhcrc.org --username $DOCKERIMAGES_USER --password $DOCKERIMAGES_PASS https://dockerimages.fhcrc.org
       - docker push dockerimages.fhcrc.org/cromwell:callcachingpr
